@@ -10,16 +10,25 @@ export class ProfessionalService {
     private readonly professionalRepository: Repository<Professional>,
   ) {}
 
-  async findAll(): Promise<Professional[]> {
+  async findAllProfessional(): Promise<Professional[]> {
     console.log("by");
     return await this.professionalRepository.find();
   }
 
-//   async findOne(id: number): Promise<Professional> {
-//     return await this.professionalRepository.findOne(id);
-//   }
+  // async findOne(id: number): Promise<Professional> {
+  //   return await this.professionalRepository.findOneBy();
+  // }
 
-  async createUser(professional: Professional): Promise<Professional> {
+  async createProfessional(professional: Professional): Promise<Professional> {
     return await this.professionalRepository.save(professional);
+  }
+
+
+  async updateProfessional(id: string,professional:Professional): Promise<any> {
+     await this.professionalRepository.update(id,professional)
+  }
+
+  async deleteprofessional(professional:Professional): Promise<Professional>{
+    return await this.professionalRepository.remove(professional)
   }
 }
