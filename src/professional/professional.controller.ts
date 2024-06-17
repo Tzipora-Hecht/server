@@ -1,6 +1,6 @@
 import { Controller, Delete, Get, Param, Post, Put, Req } from '@nestjs/common';
-import {  ProfessionalService } from '../services/professional.service'
-import { Professional } from '../entities/professional';
+import {  ProfessionalService } from './professional.service'
+import { Professional } from './professional';
 import { promises } from 'dns'
 import { Request } from 'express';
 
